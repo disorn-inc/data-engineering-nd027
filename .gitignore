@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/Part 02-Module 01-Lesson 03_Project Data Modeling with Postgres/data/
