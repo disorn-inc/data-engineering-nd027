@@ -8,7 +8,7 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 # Create Fact Table
 create_songplay_table = ("""CREATE TABLE IF NOT EXISTS songplays (
-                            songplay_id serial PRIMARY KEY NOT NUL, 
+                            songplay_id serial PRIMARY KEY NOT NULL, 
                             start_time varchar REFERENCES time(start_time), 
                             user_id int REFERENCES users(user_id),
                             level varchar,
@@ -16,7 +16,7 @@ create_songplay_table = ("""CREATE TABLE IF NOT EXISTS songplays (
                             artist_id varchar REFERENCES artists(artist_id),
                             session_id varchar,
                             location varchar, 
-                            varchar user_agent)
+                            user_agent varchar)
                 """)
 
 # Create Dimension Tables
