@@ -1,6 +1,7 @@
 import psycopg2
 from sql_queries import create_table_queries, drop_table_queries
 
+
 def create_db():
     """
     -   Create sparkifydb
@@ -11,10 +12,9 @@ def create_db():
     try:
         conn = psycopg2.connect("host=localhost user=postgres password=uncle1dee")
     except psycopg2.Error as e:
-        print("Error: Could not make connection to the Postgres database")\
-
-
-    # Create the cursor
+        print("Error: Could not make connection to the Postgres database") \
+ \
+            # Create the cursor
     try:
         cur = conn.cursor()
     except psycopg2.Error as e:
@@ -51,5 +51,29 @@ def create_db():
     return cur, conn
 
 
-create_db()
+def drop_tables(cur, conn):
+    """"Executing the drop table queries"""
+    for query in drop_table_queries:
+        cur.execute(query)
+        conn.commit()  # commit transaction
 
+
+def create_tables(cur, conn):
+    """"Executing the create table queries"""
+    for query in create_table_queries:
+        cur.execute(query)
+        conn.commit()  # commit transaction
+
+
+def main():
+    """All function will be executed by calling function main"""
+    cur, conn = create_db()
+
+    drop_tables(cur, conn)
+    create_tables(cur, conn)
+
+    conn.close()
+
+
+if __name__ == "__main__":
+    main()

@@ -4,7 +4,7 @@ songplay_table_drop = "DROP TABLE IF EXISTS songplays"
 users_table_drop = "DROP TABLE IF EXISTS users"
 songs_table_drop = "DROP TABLE IF EXISTS songs"
 artists_table_drop = "DROP TABLE IF EXISTS artist"
-time_table_drop = "DROP TABLE IF NOT EXISTS time"
+time_table_drop = "DROP TABLE IF EXISTS time"
 
 # Create Fact Table
 create_songplay_table = ("""CREATE TABLE IF NOT EXISTS songplays (
