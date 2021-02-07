@@ -97,3 +97,8 @@ song_select = ("""
                     AND a.name = %s
                     AND s.duration = %s
                 """)
+
+# Queries Lists
+
+create_table_queries = [create_users_table, create_songs_table, create_artists_table,create_time_table, create_songplay_table]
+drop_table_queries = [songs_table_drop, users_table_drop, artists_table_drop songplay_table_drop, time_table_drop]
