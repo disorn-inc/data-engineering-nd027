@@ -1,9 +1,9 @@
 # Drop Tables
 
 songplay_table_drop = "DROP TABLE IF EXISTS songplays"
-users_table_drop = "DROP TABLE IF EXISTS users"
-songs_table_drop = "DROP TABLE IF EXISTS songs"
-artists_table_drop = "DROP TABLE IF EXISTS artist"
+users_table_drop = "DROP TABLE IF EXISTS users CASCADE"
+songs_table_drop = "DROP TABLE IF EXISTS songs CASCADE"
+artists_table_drop = "DROP TABLE IF EXISTS artist CASCADE"
 time_table_drop = "DROP TABLE IF EXISTS time"
 
 # Create Fact Table

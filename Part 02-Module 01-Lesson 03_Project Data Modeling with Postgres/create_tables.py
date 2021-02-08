@@ -12,9 +12,9 @@ def create_db():
     try:
         conn = psycopg2.connect("host=localhost user=postgres password=uncle1dee")
     except psycopg2.Error as e:
-        print("Error: Could not make connection to the Postgres database") \
- \
-            # Create the cursor
+        print("Error: Could not make connection to the Postgres database")
+
+    # Create the cursor
     try:
         cur = conn.cursor()
     except psycopg2.Error as e:
