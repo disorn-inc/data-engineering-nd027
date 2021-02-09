@@ -23,7 +23,7 @@ def process_song_file(cur, filepath):
 def process_log_file(cur, filepath):
     """Do ETL on the log_data dataset to create the time and user dimensional table and fact table songplays"""
 
-    # Openlog file
+    # Open log file
     df = pd.read_json(filepath, lines=True)
 
     # filter by NextSong action
