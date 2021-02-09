@@ -57,3 +57,5 @@ def process_log_file(cur, filepath):
         # insert songplay record
         songplay_data = (row.ts, row.userID, row.level, songid, artistid, row.sessionId, row.location, row.userAgent)
         cur.execute(insert_songplay_table, songplay_data)
+
+
