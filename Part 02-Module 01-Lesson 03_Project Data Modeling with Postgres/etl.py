@@ -79,3 +79,15 @@ def process_data(cur, conn, filepath, func):
         print('{}/{} files processed.'.format(i, num_files))
 
 
+def main():
+    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=postgres password=uncle1dee")
+    cur = conn.cursor()
+
+    process_data(cur, conn, filepath='data/song_data', func=process_song_file())
+    process_data(cur, conn, filepath='data/log_data', func=process_log_file())
+
+    conn.close()
+
+
+if __name__ == '__main__':
+    main()
