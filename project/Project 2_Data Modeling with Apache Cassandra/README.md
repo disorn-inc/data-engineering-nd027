@@ -1,4 +1,4 @@
-# Project: Data Modeling with Postgres
+# Project: Data Modeling with Apache Cassandra
 
 ## Sparkify Song Play Analysis
 
